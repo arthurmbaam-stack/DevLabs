@@ -1,0 +1,122 @@
+/* Importando a fonte do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+/* Estilo para o corpo da página */
+body {
+    font-family: 'Roboto', sans-serif; /* Aplicando a fonte Roboto ao corpo */
+    background-color: #f4f4f4; /* Cor de fundo clara */
+    color: #333; /* Cor do texto */
+    margin: 0; /* Remove margens padrão */
+    padding: 0; /* Remove preenchimento padrão */
+}
+
+/* Estilo para o contêiner principal */
+.container {
+    width: 95%;              /* Responsivo em vez de largura fixa */
+    max-width: 1400px;       /* Mantém o limite máximo */
+    box-sizing: border-box;  /* Padding e borda entram no cálculo da largura */
+    margin: 20px auto;
+    padding: 20px;
+    background: white;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    border: 2px solid blue;
+    overflow-x: auto;        /* Se ainda faltar espaço, rola dentro da box */
+}
+
+/* Estilo para o cabeçalho */
+h1 {
+    text-align: center; /* Centraliza o texto */
+    color: #007bff; /* Cor azul para o cabeçalho */
+    margin-bottom: 20px; /* Espaçamento abaixo do cabeçalho */
+}
+
+/* Estilo para a tabela */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    table-layout: auto;
+}
+
+/* Estilo para as células da tabela */
+th, td {
+    padding: 12px; /* Preenchimento interno de 12px */
+    text-align: left; /* Alinhamento à esquerda do texto */
+    border-bottom: 1px solid #ddd; /* Borda inferior leve */
+}
+
+/* Estilo para a coluna de nomes das estações */
+td.break-word {
+    word-wrap: break-word;
+    overflow-wrap: anywhere;   /* Quebra URLs grandes */
+    max-width: 180px;
+    white-space: normal;
+}
+
+/* Estilo para os cabeçalhos da tabela */
+th {
+    background-color: #007bff; /* Cor de fundo azul para cabeçalhos */
+    color: white; /* Cor do texto dos cabeçalhos em branco */
+}
+
+/* Estilo para o efeito hover nas linhas da tabela */
+tr:hover {
+    background-color: #f1f1f1; /* Cor de fundo leve ao passar o mouse */
+}
+
+/* Estilo para links */
+a {
+    color: #007bff; /* Cor azul para links */
+    text-decoration: none; /* Remove o sublinhado padrão dos links */
+    display: block; /* Faz o link ocupar toda a largura disponível */
+}
+
+/* Estilo para o efeito hover nos links */
+a:hover {
+    text-decoration: underline; /* Sublinha o texto ao passar o mouse */
+}
+
+/* Estilo para o favicon das estações */
+.favicon {
+    width: 64px;   /* Defina a largura do favicon */
+    height: 64px;  /* Defina a altura do favicon */
+}
+
+/* Estilo para a div de audio */
+.audio-container {
+    border: 2px solid blue;
+    border-radius: 5px;
+    background-color: #f0f0f0;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+    width: 260px;
+}
+.audio-container audio {
+    width: 100%;
+    display: block;
+}
+th:last-child,
+td:last-child {
+    text-align: center;
+    width: 90px;
+    white-space: nowrap;
+}
+.coracao {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 28px;
+    line-height: 1;
+    padding: 4px 8px;
+    color: #555;                 /* Coração vazio (♡) */
+    transition: transform 0.15s ease, color 0.15s ease;
+}
+
+.coracao:hover {
+    transform: scale(1.2);
+    color: red;
+}
+/* Coração preenchido (♥) em vermelho */
+.coracao.favoritado {
+    color: red;
+}
