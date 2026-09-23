@@ -21,8 +21,8 @@ class FaltasSpider:
     formdata = {
         'AgEvtSrc': 'S124_',
         'AgStateCode': '7',
-        'S50_': '923945',
-        'S64_': '1960971',
+        'S50_': 'SUA_MATRICULA',  # Substitua por sua matrícula
+        'S64_': 'SUA_SENHA',  # Substitua por sua senha
         'S78_': '9',
         'S219_': ''
     }
