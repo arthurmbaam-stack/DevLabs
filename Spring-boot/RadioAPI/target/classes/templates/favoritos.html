@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR"
+xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Rádios favoritas</title>
+    <link rel="stylesheet" th:href="@{/css/favorito.css}">"
+</head>
+
+<body>
+
+    <h1>Minhas rádios favoritas</h1>
+
+    <a th:href="@{/Radio}">Voltar para as rádios</a>
+
+    <p th:if="${favoritos.isEmpty()}">
+        Nenhuma rádio foi favoritada.
+    </p>
+
+    <div th:each="radio : ${favoritos}">
+
+        <img th:src="${radio.favicon}"
+            alt="Imagem da rádio"
+            width="100">
+
+        <h2 th:text="${radio.name}"></h2>
+
+        <audio controls>
+            <source th:src="${radio.url}">
+        </audio>
+
+        <form th:action="@{/favoritos/remover}" method="post">
+            <input type="hidden"
+                name="stationuuid"
+                th:value="${radio.stationuuid}">
+
+            <button type="submit">
+                Remover dos favoritos
+            </button>
+        </form>
+
+        <hr>
+
+    </div>
+
+</body>
+</html>
+

@@ -1,0 +1,6 @@
+com\example\RadioAPI\controller\RadioAPicontroller.class
+com\example\RadioAPI\aplication\RadioApiApplication.class
+com\example\RadioAPI\service\RadioAPIservice.class
+com\example\RadioAPI\config\APIconfig.class
+com\example\RadioAPI\model\RadioAPImodel.class
+com\example\RadioAPI\service\FavoritoService.class
