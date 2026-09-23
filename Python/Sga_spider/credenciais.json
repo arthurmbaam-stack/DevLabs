@@ -1,0 +1,30 @@
+[
+    {
+        "Titulo": "PUC Mail",
+        "Credencial": "Login: ambaraujo@sga.pucminas.br"
+    },
+    {
+        "Titulo": "Office 365/Teams",
+        "Credencial": "Login: 1025300@pucminas.edu.br"
+    },
+    {
+        "Titulo": "Canvas",
+        "Credencial": "Login Microsoft: 1025300@pucminas.edu.br"
+    },
+    {
+        "Titulo": "Rede Wifi",
+        "Credencial": "Login: 1025300@pucminas.br"
+    },
+    {
+        "Titulo": "Portal CAPES",
+        "Credencial": "Login: 1025300"
+    },
+    {
+        "Titulo": "Laboratórios acadêmicos",
+        "Credencial": "Login: 1025300"
+    },
+    {
+        "Titulo": "Microsoft Azure Dev Tools For Teaching",
+        "Credencial": "Login: Usuário de e-mail@pucminas.edu.brEm caso de problemas acesse:http://icei.pucminas.br/microsoft-azure/"
+    }
+]
