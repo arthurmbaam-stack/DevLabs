@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Candidatos</title>
+    <!-- th:href="@{...}" monta o caminho certo a partir da pasta static -->
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+
+<header class="topo">
+    <div class="container">
+        <h1>Candidatos</h1>
+        <p>Filtre por nome, cargo ou tempo de experiência.</p>
+    </div>
+</header>
+
+<main class="container">
+
+    <!-- method="get": os filtros vão na URL e chegam nos @RequestParam -->
+    <form class="filtros" method="get" th:action="@{/candidatos}">
+        <div class="campo">
+            <label for="nome">Nome</label>
+            <input type="text" id="nome" name="nome" th:value="${nome}" placeholder="Ex.: Ana">
+        </div>
+
+        <div class="campo">
+            <label for="cargo">Cargo</label>
+            <select id="cargo" name="cargo">
+                <option value="">Todos os cargos</option>
+                <option th:each="c : ${cargos}"
+                        th:value="${c}"
+                        th:text="${c}"
+                        th:selected="${c == cargoSelecionado}">Cargo</option>
+            </select>
+        </div>
+
+        <div class="campo">
+            <label for="experienciaMin">Experiência mínima (anos)</label>
+            <input type="number" id="experienciaMin" name="experienciaMin" min="0"
+                   th:value="${experienciaMin}">
+        </div>
+
+        <div class="acoes">
+            <button type="submit">Filtrar</button>
+            <a class="limpar" th:href="@{/candidatos}">Limpar filtros</a>
+        </div>
+    </form>
+
+    <p class="resultado" th:text="${candidatos.size()} + ' candidato(s) encontrado(s)'">0 candidatos</p>
+
+    <section class="grade">
+
+        <!-- th:each = for. Repete o <article> para cada candidato -->
+        <article class="card" th:each="c : ${candidatos}">
+            <div class="card-topo">
+                <div class="avatar" th:text="${#strings.substring(c.nome, 0, 1)}">A</div>
+                <h2 th:text="${c.nome}">Nome</h2>
+            </div>
+            <p class="cargo" th:text="${c.cargo}">Cargo</p>
+            <p class="meta" th:text="${c.cidade} + ' · ' + ${c.experiencia} + ' ano(s) de experiência'">Cidade</p>
+            <div class="tags">
+                <!-- split transforma "Java, SQL" em lista -->
+                <span class="tag" th:each="t : ${#strings.listSplit(c.tecnologias, ',')}"
+                      th:text="${#strings.trim(t)}">Java</span>
+            </div>
+        </article>
+
+        <!-- th:if = if. Só aparece quando a lista está vazia -->
+        <div class="vazio" th:if="${#lists.isEmpty(candidatos)}">
+            Nenhum candidato encontrado. Tente remover algum filtro.
+        </div>
+
+    </section>
+</main>
+
+</body>
+</html>
